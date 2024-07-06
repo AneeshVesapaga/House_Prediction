@@ -7,7 +7,10 @@ from sklearn.linear_model import LinearRegression
 import pickle
 
 image = "inno_image.jpeg"
-model = pickle.load(open(r"C:\Users\anees\Data Analysis\Machine Learing\ML jupyter problems\lr.pkl","rb"))
+#model = pickle.load(open(r"C:\Users\anees\Data Analysis\Machine Learing\ML jupyter problems\lr.pkl","rb"))
+
+modelpath = os.path.join(os.path.dirname(_file), "lr.pkl")
+model = pickle.load(open(model_path, "rb"))
 
 SquareFeet = st.number_input("Enter the size of house",min_value = 60, max_value = 2400,step = 50)	
 Bedrooms = st.number_input("Enter the no of bedrooms",min_value = 0,max_value = 4,step = 1)	
