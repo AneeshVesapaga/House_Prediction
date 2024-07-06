@@ -6,16 +6,8 @@ import os
 # Load the model using a relative path
 
 
-# Example path to your serialized model file
-model_path = "lr.pkl"
-
-# Attempt to open and load the model
-try:
-    with open(model_path, "rb") as f:
-        model = pickle.load(f)
-except FileNotFoundError:
-    print(f"Error: File '{model_path}' not found.")
-    # Handle the error or raise it further if needed
+modelpath = os.path.join(os.path.dirname(_file), "lr.pkl")
+model = pickle.load(open(model_path, "rb"))
 
 st.image("ino_img.jpeg")
 
