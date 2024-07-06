@@ -6,9 +6,9 @@ import os
 # Load the model using a relative path
 
 model_path = r"C:\Users\anees\Data Analysis\Machine Learing\ML jupyter problems\lr.pkl"
+model = pickle.load(open(model_path, "rb"))
 
-image_path = "ino_img.jpeg"
-st.image(image_path)
+st.image("ino_img.jpeg")
 
 # Title and image
 st.title("HOUSE PRICE PREDICTION")
