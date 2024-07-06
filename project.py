@@ -6,11 +6,12 @@ import os
 # Load the model using a relative path
 
 model_path = r"C:\Users\anees\Data Analysis\Machine Learing\ML jupyter problems\lr.pkl"
-image_path = r"C:\Users\anees\python1\ino_img.jpeg"
+
+image_path = "ino_img.jpeg"
+st.image(image_path)
 
 # Title and image
 st.title("HOUSE PRICE PREDICTION")
-st.image(image_path)  # Ensure the image is in the same directory or adjust the path accordingly
 
 # Input fields
 SquareFeet = st.number_input("Enter Area of house in square feet", min_value=600, max_value=5000, step=50)
