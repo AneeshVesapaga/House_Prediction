@@ -6,8 +6,15 @@ import os
 # Load the model using a relative path
 
 
-modelpath = os.path.join(os.path.dirname(_file), "lr.pkl")
-model = pickle.load(open(model_path, "rb"))
+model_path = os.path.join(os.path.dirname(__file__), "lr.pkl")
+
+# Load the model
+try:
+    with open(model_path, "rb") as f:
+        model = pickle.load(f)
+except FileNotFoundError:
+    st.error(f"Error: Model file '{model_path}' not found.")
+    st.stop()
 
 st.image("ino_img.jpeg")
 
