@@ -24,9 +24,6 @@ st.title("HOUSE PRICE PREDICTION")
 image_path = os.path.join(os.path.dirname(__file__), "ino_img.jpg")
 st.write(image_path)
 
-# Optionally, you can add some text or description
-st.write("Here is the image 'ino_img.jpeg'")
-
 # Input fields
 SquareFeet = st.number_input("Enter Area of house in square feet", min_value=600, max_value=5000, step=50)
 Bedrooms = st.number_input("Enter the number of bedrooms", min_value=0, max_value=5, step=1)
