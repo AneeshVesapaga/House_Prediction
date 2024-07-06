@@ -16,12 +16,12 @@ except Exception as e:
     st.error(e)
     st.stop()
 
+st.image("ino_img.jpg")
 # Title and image
 st.title("HOUSE PRICE PREDICTION")
 
 # Specify the path to your image file using __file__ method
 #image_path = os.path.join(os.path.dirname(__file__), "ino_img.jpg")
-st.image("ino_img.jpg")
 
 # Input fields
 SquareFeet = st.number_input("Enter Area of house in square feet", min_value=600, max_value=5000, step=50)
