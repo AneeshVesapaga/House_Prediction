@@ -10,7 +10,7 @@ image_path = "inno_image.jpeg"
 
 # Title and image
 st.title("HOUSE PRICE PREDICTION")
-st.image("inno_image.jpeg")  # Ensure the image is in the same directory or adjust the path accordingly
+st.image(image_path)  # Ensure the image is in the same directory or adjust the path accordingly
 
 # Input fields
 SquareFeet = st.number_input("Enter Area of house in square feet", min_value=600, max_value=5000, step=50)
