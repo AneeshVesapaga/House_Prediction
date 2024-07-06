@@ -29,7 +29,7 @@ Bedrooms = st.number_input("Enter the number of bedrooms", min_value=0, max_valu
 Bathrooms = st.number_input("Enter the number of bathrooms", min_value=0, max_value=5, step=1)
 Neighborhood = st.radio("Select type of neighbourhood", ['Rural', 'Urban', 'Suburb'])
 neighbor = 1 if Neighborhood == "Rural" else 2 if Neighborhood == "Urban" else 3
-YearBuilt = st.number_input("Enter year of Construction of property", min_value=1900, max_value=2030, step=1)
+YearBuilt = st.number_input("Enter year of Construction of property", min_value=2020, max_value=2070, step=1)
 
 # Prediction
 if st.button("PREDICT PRICE"):
