@@ -9,7 +9,8 @@ model = pickle.load(open(model_path, "rb"))
 
 # Title and image
 st.title("HOUSE PRICE PREDICTION")
-st.image(r"C:\Users\anees\OneDrive\Pictures\Downloads\inno_image.jpeg")
+image_path = r"C:\Users\anees\OneDrive\Pictures\Downloads\inno_image.jpeg"
+st.image(image_path)
 
 # Input fields
 SquareFeet = st.number_input("Enter Area of house in square feet", min_value=60, max_value=2400, step=50)
