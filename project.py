@@ -21,14 +21,8 @@ except Exception as e:
 st.title("HOUSE PRICE PREDICTION")
 
 # Specify the path to your image file using __file__ method
-image_path = os.path.join(os.path.dirname(__file__), "ino_img.jpeg")
-
-# Display the image using st.image()
-try:
-    st.image(image_path, caption='Inno Image')  # You can add a caption for the image
-except FileNotFoundError:
-    st.error(f"Error: Image file '{image_path}' not found.")
-    st.stop()
+image_path = os.path.join(os.path.dirname(__file__), "ino_img.jpg")
+st.write(image_path)
 
 # Optionally, you can add some text or description
 st.write("Here is the image 'ino_img.jpeg'")
