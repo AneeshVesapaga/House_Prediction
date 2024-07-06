@@ -7,19 +7,25 @@ model_path = r"C:\Users\anees\Data Analysis\Machine Learing\ML jupyter problems\
 image_path = "inno_image.jpeg"
 
 # Debug: Print the current working directory and paths
-st.write("Current working directory:", os.getcwd())
+current_dir = os.getcwd()
+st.write("Current working directory:", current_dir)
 st.write("Model path:", model_path)
 st.write("Image path:", image_path)
 
-# Load the model
-try:
-    with open(model_path, "rb") as model_file:
-        model = pickle.load(model_file)
-except FileNotFoundError:
+# Check if the model file exists
+if os.path.exists(model_path):
+    try:
+        with open(model_path, "rb") as model_file:
+            model = pickle.load(model_file)
+        st.write("Model loaded successfully.")
+    except Exception as e:
+        st.write(f"An error occurred while loading the model: {e}")
+        model = None
+else:
     st.write(f"Model file not found at {model_path}")
     model = None
 
-# Display the image
+# Check if the image file exists
 if os.path.exists(image_path):
     st.image(image_path)
 else:
@@ -40,4 +46,3 @@ if model and st.button("PREDICT PRICE"):
         st.write("The price for the flat with given details is Rs.", price[0])
     except Exception as e:
         st.write("An error occurred:", e)
-
