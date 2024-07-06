@@ -6,7 +6,7 @@ import os
 # Load the model using a relative path
 
 model_path = r"C:\Users\anees\Data Analysis\Machine Learing\ML jupyter problems\lr.pkl"
-image_path = "inno_image.jpeg"
+image_path = "ino_img.jpeg"
 
 # Title and image
 st.title("HOUSE PRICE PREDICTION")
