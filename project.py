@@ -2,14 +2,23 @@ import streamlit as st
 import os
 import pickle
 
-# Load the model using an absolute path
-model_path = r"C:\Users\anees\Data Analysis\Machine Learing\ML jupyter problems\lr.pkl"
-model = pickle.load(open(model_path, "rb"))
+# Define relative paths
+current_dir = os.path.dirname(__file__)
+model_path = os.path.join(current_dir, "lr.pkl")
+image_path = os.path.join(current_dir, "inno_image.jpeg")
 
-# Set image path
-image_path = r"C:\Users\anees\OneDrive\Pictures\Downloads\inno_image.jpeg"
+# Debug: print the current working directory and paths
+st.write("Current working directory:", current_dir)
+st.write("Model path:", model_path)
+st.write("Image path:", image_path)
 
-# Check if the image file exists
+# Load the model
+if os.path.exists(model_path):
+    model = pickle.load(open(model_path, "rb"))
+else:
+    st.write(f"Model file not found at {model_path}")
+
+# Display the image
 if os.path.exists(image_path):
     st.image(image_path)
 else:
