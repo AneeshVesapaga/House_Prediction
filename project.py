@@ -9,7 +9,13 @@ model = pickle.load(open(model_path, "rb"))
 
 # Title and image
 st.title("HOUSE PRICE PREDICTION")
-st.image("inno image.jpeg")  # Ensure the image is in the same directory or adjust the path accordingly
+
+# Check if the image file exists
+image_path = os.path.join(os.path.dirname(__file__), "inno image.jpeg")
+if os.path.exists(image_path):
+    st.image(image_path)
+else:
+    st.write("Image file 'inno image.jpeg' not found.")
 
 # Input fields
 SquareFeet = st.number_input("Enter Area of house in square feet", min_value=60, max_value=2400, step=50)
@@ -26,3 +32,4 @@ if st.button("PREDICT PRICE"):
         st.write("The price for the flat with given details is Rs.", price[0])
     except Exception as e:
         st.write("An error occurred:", e)
+
