@@ -1,11 +1,12 @@
 import streamlit as st
 import pandas as pd 
 import numpy as np
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error,r2_score
+#from sklearn.model_selection import train_test_split
+#from sklearn.metrics import mean_squared_error,r2_score
 from sklearn.linear_model import LinearRegression
 import pickle
 
+image = "inno_image.jpeg"
 model = pickle.load(open(r"C:\Users\anees\Data Analysis\Machine Learing\ML jupyter problems\lr.pkl","rb"))
 
 SquareFeet = st.number_input("Enter the size of house",min_value = 60, max_value = 2400,step = 50)	
